@@ -49,28 +49,15 @@ work_sample10_car/
 work_sample10_motorcycle/
 work_truck/
 
+# README examples
+!examples/images/
+!examples/images/*.jpg
+!examples/images/*.png
+!examples/videos/
+!examples/videos/*.mp4
+
 # OS and editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
-
-# README figures
-!docs/images/
-!docs/images/*.jpg
-!docs/images/*.png
-
-# README figures
-!docs/images/
-!docs/images/*.jpg
-!docs/images/*.png
-
-# README demo videos
-!docs/videos/
-!docs/videos/sam3_polygon_counting_big.mp4
-!docs/videos/sam3_polygon_counting_small.mp4
-!docs/videos/sam31_polygon_counting_small.mp4
-
-# README demo videos
-!docs/videos/
-!docs/videos/*.mp4

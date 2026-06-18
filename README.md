@@ -3,11 +3,11 @@
 Segmentation-based conveyor belt object tracking and counting using SAM3/SAM3.1 video masks.
 
 This repository focuses on **conveyor belt object counting**.
-The project first validated video tracking on common vehicle classes such as cars and trucks, then extended the pipeline to conveyor belt videos where small industrial objects are tracked and counted using segmentation masks.
+The pipeline was first validated on general vehicle videos, then extended to conveyor belt videos where small industrial objects are tracked and counted using segmentation masks.
 
 ---
 
-## Project Overview
+## Overview
 
 The goal of this project is to build a video counting pipeline for conveyor belt environments.
 
@@ -31,30 +31,30 @@ Conveyor video
 ### SAM3 Polygon-Zone Counting: Big Polygon
 
 <p align="center">
-  <video src="docs/videos/sam3_polygon_counting_big.mp4" controls width="640"></video>
+  <video src="examples/videos/sam3_polygon_counting_big.mp4" controls width="640"></video>
 </p>
 
-[Download video](docs/videos/sam3_polygon_counting_big.mp4)
+[Download video](examples/videos/sam3_polygon_counting_big.mp4)
 
 ---
 
 ### SAM3 Polygon-Zone Counting: Small Polygon
 
 <p align="center">
-  <video src="docs/videos/sam3_polygon_counting_small.mp4" controls width="640"></video>
+  <video src="examples/videos/sam3_polygon_counting_small.mp4" controls width="640"></video>
 </p>
 
-[Download video](docs/videos/sam3_polygon_counting_small.mp4)
+[Download video](examples/videos/sam3_polygon_counting_small.mp4)
 
 ---
 
 ### SAM3.1 Polygon-Zone Counting: Small Polygon
 
 <p align="center">
-  <video src="docs/videos/sam31_polygon_counting_small.mp4" controls width="640"></video>
+  <video src="examples/videos/sam31_polygon_counting_small.mp4" controls width="640"></video>
 </p>
 
-[Download video](docs/videos/sam31_polygon_counting_small.mp4)
+[Download video](examples/videos/sam31_polygon_counting_small.mp4)
 
 ---
 
@@ -70,12 +70,9 @@ conveyor-belt-video-counting/
 ├─ prototypes/
 │  └─ vehicle_tracking_prototype.py
 │
-├─ docs/
+├─ examples/
 │  ├─ images/
 │  └─ videos/
-│
-├─ examples/
-│  └─ conveyor_belt_bolt/
 │
 ├─ README.md
 ├─ requirements.txt
@@ -102,7 +99,7 @@ This repository does **not** include:
 * Official SAM3 source code
 * SAM3/SAM3.1 checkpoints
 * Input videos
-* Generated experiment outputs except selected README demo videos
+* Full generated experiment outputs
 
 Install Python dependencies:
 
@@ -212,8 +209,6 @@ Supported modes:
 
 ## Development Flow
 
-The project was developed in the following order:
-
 ```text
 Vehicle tracking prototype
 → YOLO box tracking vs SAM3 mask tracking comparison
@@ -232,7 +227,7 @@ The final target is conveyor belt video counting.
 * SAM3/SAM3.1 checkpoints are not included.
 * The official SAM3 repository must be installed separately.
 * SAM3/SAM3.1 video outputs in this workflow do not provide YOLO-style class confidence scores.
-* The included demo videos are small README examples only, not full experiment outputs.
+* The included demo videos are README examples only, not full experiment outputs.
 
 GitHub may not always render local MP4 files inline in README depending on the browser or GitHub rendering behavior. Download links are provided below each video for reliable access.
 
@@ -254,3 +249,4 @@ GitHub may not always render local MP4 files inline in README depending on the b
 * Add line-crossing count mode
 * Improve ID recovery after short occlusion
 * Compare YOLO box-based counting and SAM mask-based counting quantitatively
+

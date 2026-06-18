@@ -64,3 +64,13 @@ Thumbs.db
 !docs/images/
 !docs/images/*.jpg
 !docs/images/*.png
+
+# README demo videos
+!docs/videos/
+!docs/videos/sam3_polygon_counting_big.mp4
+!docs/videos/sam3_polygon_counting_small.mp4
+!docs/videos/sam31_polygon_counting_small.mp4
+
+# README demo videos
+!docs/videos/
+!docs/videos/*.mp4

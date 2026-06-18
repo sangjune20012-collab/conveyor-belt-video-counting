@@ -54,3 +54,13 @@ work_truck/
 Thumbs.db
 .vscode/
 .idea/
+
+# README figures
+!docs/images/
+!docs/images/*.jpg
+!docs/images/*.png
+
+# README figures
+!docs/images/
+!docs/images/*.jpg
+!docs/images/*.png

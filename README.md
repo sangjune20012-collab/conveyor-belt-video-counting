@@ -3,7 +3,7 @@
 Segmentation-based conveyor belt object tracking and counting using SAM3/SAM3.1 video masks.
 
 This repository focuses on **conveyor belt object counting**.
-The pipeline was first validated on general vehicle videos, then extended to conveyor belt videos where small industrial objects are tracked and counted using segmentation masks.
+Small industrial objects on a conveyor belt are tracked using segmentation masks, and object counts are calculated from polygon-zone entry events.
 
 ---
 
@@ -67,9 +67,6 @@ conveyor-belt-video-counting/
 │  ├─ sam31_segment_video.py
 │  └─ polygon_zone_counting.py
 │
-├─ prototypes/
-│  └─ vehicle_tracking_prototype.py
-│
 ├─ examples/
 │  ├─ images/
 │  └─ videos/
@@ -83,12 +80,11 @@ conveyor-belt-video-counting/
 
 ## Main Scripts
 
-| File                                       | Purpose                                                           |
-| ------------------------------------------ | ----------------------------------------------------------------- |
-| `scripts/sam3_segment_video.py`            | Runs SAM3 video segmentation tracking and saves object masks.     |
-| `scripts/sam31_segment_video.py`           | Runs SAM3.1 video segmentation tracking and saves object masks.   |
-| `scripts/polygon_zone_counting.py`         | Counts objects using saved segmentation masks and a polygon zone. |
-| `prototypes/vehicle_tracking_prototype.py` | Early YOLO/SAM3 vehicle tracking comparison prototype.            |
+| File                               | Purpose                                                           |
+| ---------------------------------- | ----------------------------------------------------------------- |
+| `scripts/sam3_segment_video.py`    | Runs SAM3 video segmentation tracking and saves object masks.     |
+| `scripts/sam31_segment_video.py`   | Runs SAM3.1 video segmentation tracking and saves object masks.   |
+| `scripts/polygon_zone_counting.py` | Counts objects using saved segmentation masks and a polygon zone. |
 
 ---
 
@@ -207,20 +203,6 @@ Supported modes:
 
 ---
 
-## Development Flow
-
-```text
-Vehicle tracking prototype
-→ YOLO box tracking vs SAM3 mask tracking comparison
-→ SAM3/SAM3.1 conveyor belt segmentation tracking
-→ SAM mask-based polygon-zone counting
-```
-
-The vehicle experiments were used only for early validation because classes such as cars and trucks are reliably recognized by both YOLO and SAM3.
-The final target is conveyor belt video counting.
-
----
-
 ## Notes
 
 * Input videos are not included.
@@ -228,6 +210,7 @@ The final target is conveyor belt video counting.
 * The official SAM3 repository must be installed separately.
 * SAM3/SAM3.1 video outputs in this workflow do not provide YOLO-style class confidence scores.
 * The included demo videos are README examples only, not full experiment outputs.
+* Early vehicle tracking prototypes are intentionally excluded from this repository to keep this project focused on conveyor belt counting.
 
 GitHub may not always render local MP4 files inline in README depending on the browser or GitHub rendering behavior. Download links are provided below each video for reliable access.
 
@@ -248,5 +231,6 @@ GitHub may not always render local MP4 files inline in README depending on the b
 * Add mask-polygon overlap ratio filtering
 * Add line-crossing count mode
 * Improve ID recovery after short occlusion
-* Compare YOLO box-based counting and SAM mask-based counting quantitatively
+* Compare box-based counting and mask-based counting quantitatively
+
 

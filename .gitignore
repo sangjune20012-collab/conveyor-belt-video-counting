@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Videos and datasets
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# Image outputs
+*.jpg
+*.jpeg
+*.png
+*.bmp
+
+# Model weights and checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+checkpoints/
+weights/
+
+# Official SAM3 repository
+sam3/
+sam3_dirty_backup/
+sam3.zip
+
+# Outputs and experiment folders
+outputs/
+results/
+Result_Bolt_260609/
+bolt_*_out*/
+sam31_only_out*/
+vehicle_compare_out/
+runs/
+
+# Local working folders
+work/
+work_sample10_car/
+work_sample10_motorcycle/
+work_truck/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

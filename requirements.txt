@@ -1,0 +1,17 @@
+opencv-python
+numpy
+torch
+torchvision
+ultralytics
+supervision==0.27.0
+tqdm
+pillow
+matplotlib
+scikit-image
+iopath
+fvcore
+hydra-core
+omegaconf
+einops
+ftfy
+huggingface_hub

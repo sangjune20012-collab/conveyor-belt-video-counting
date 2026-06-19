@@ -5,9 +5,20 @@ Segmentation-based conveyor belt object tracking and counting using SAM3/SAM3.1 
 This repository focuses on **conveyor belt object counting**.
 Small industrial objects on a conveyor belt are tracked using segmentation masks, and object counts are calculated from polygon-zone entry events.
 
-<p align="center">
-  <img src="examples/images/conveyor_sam3_polygon_counting.jpg" width="720">
-</p>
+## Preview
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="examples/images/conveyor_sam3_polygon_counting.jpg" width="420"><br>
+      <sub><b>SAM3 Polygon Counting</b></sub>
+    </td>
+    <td align="center">
+      <img src="examples/images/conveyor_sam31_polygon_counting.jpg" width="420"><br>
+      <sub><b>SAM3.1 Polygon Counting</b></sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -235,3 +246,4 @@ GitHub may not always render local MP4 files inline in README depending on the b
 * Add line-crossing count mode
 * Improve ID recovery after short occlusion
 * Compare box-based counting and mask-based counting quantitatively
+

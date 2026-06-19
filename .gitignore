@@ -67,3 +67,13 @@ Thumbs.db
 !examples/images/*.png
 !examples/videos/
 !examples/videos/*.mp4
+
+# README example assets
+!examples/images/
+!examples/images/*.jpg
+!examples/images/*.png
+!examples/videos/
+!examples/videos/counting/
+!examples/videos/counting/*.mp4
+!examples/videos/tracking/
+!examples/videos/tracking/*.mp4

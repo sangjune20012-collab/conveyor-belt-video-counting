@@ -43,33 +43,69 @@ Conveyor video
 
 ## Demo Videos
 
+### Counting Results
+
 ### SAM3 Polygon-Zone Counting: Big Polygon
 
 <p align="center">
-  <video src="examples/videos/sam3_polygon_counting_big.mp4" controls width="640"></video>
+  <video src="examples/videos/counting/sam3_polygon_counting_big.mp4" controls width="640"></video>
 </p>
 
-[Download video](examples/videos/sam3_polygon_counting_big.mp4)
+[Download video](examples/videos/counting/sam3_polygon_counting_big.mp4)
 
 ---
 
 ### SAM3 Polygon-Zone Counting: Small Polygon
 
 <p align="center">
-  <video src="examples/videos/sam3_polygon_counting_small.mp4" controls width="640"></video>
+  <video src="examples/videos/counting/sam3_polygon_counting_small.mp4" controls width="640"></video>
 </p>
 
-[Download video](examples/videos/sam3_polygon_counting_small.mp4)
+[Download video](examples/videos/counting/sam3_polygon_counting_small.mp4)
 
 ---
 
 ### SAM3.1 Polygon-Zone Counting: Small Polygon
 
 <p align="center">
-  <video src="examples/videos/sam31_polygon_counting_small.mp4" controls width="640"></video>
+  <video src="examples/videos/counting/sam31_polygon_counting_small.mp4" controls width="640"></video>
 </p>
 
-[Download video](examples/videos/sam31_polygon_counting_small.mp4)
+[Download video](examples/videos/counting/sam31_polygon_counting_small.mp4)
+
+---
+
+## Tracking Results
+
+The tracking videos are stored as experiment outputs under `examples/videos/tracking/`.
+They are kept in the repository for comparison, while the README preview focuses on the final counting results.
+
+| Tracking Result      | Description                                | File                                                      |
+| -------------------- | ------------------------------------------ | --------------------------------------------------------- |
+| SAM3 bolt tracking   | SAM3 video segmentation tracking result    | `examples/videos/tracking/sam3_bolt_tracking.mp4`         |
+| SAM3.1 bolt tracking | SAM3.1 tracking with `max_num_objects=32`  | `examples/videos/tracking/sam31_bolt_tracking_max32.mp4`  |
+| SAM3.1 bolt tracking | SAM3.1 tracking with `max_num_objects=128` | `examples/videos/tracking/sam31_bolt_tracking_max128.mp4` |
+
+---
+
+## SAM3.1 Max Object Setting
+
+SAM3.1 tracking was tested with different `max_num_objects` settings.
+
+The `max_num_objects` value controls the maximum number of objects that can be tracked in a video session.
+For conveyor belt videos, this setting matters because many small objects can appear in the frame at the same time.
+
+```text
+max_num_objects=32
+→ Lower object capacity
+→ Useful for lighter scenes or quick validation
+
+max_num_objects=128
+→ Higher object capacity
+→ More suitable for dense conveyor belt scenes
+```
+
+In this repository, both SAM3.1 tracking results are kept to show the effect of changing the object capacity setting.
 
 ---
 
@@ -85,6 +121,8 @@ conveyor-belt-video-counting/
 ├─ examples/
 │  ├─ images/
 │  └─ videos/
+│     ├─ counting/
+│     └─ tracking/
 │
 ├─ README.md
 ├─ requirements.txt
@@ -224,9 +262,10 @@ Supported modes:
 * SAM3/SAM3.1 checkpoints are not included.
 * The official SAM3 repository must be installed separately.
 * SAM3/SAM3.1 video outputs in this workflow do not provide YOLO-style class confidence scores.
-* The included demo videos are README examples only, not full experiment outputs.
+* The included counting videos are README examples only, not full experiment outputs.
+* Tracking outputs are stored for comparison, while counting videos represent the final pipeline result.
 
-GitHub may not always render local MP4 files inline in README depending on the browser or GitHub rendering behavior. Download links are provided below each video for reliable access.
+GitHub may not always render local MP4 files inline in README depending on the browser or GitHub rendering behavior. Download links are provided below each counting video for reliable access.
 
 ---
 
@@ -246,4 +285,5 @@ GitHub may not always render local MP4 files inline in README depending on the b
 * Add line-crossing count mode
 * Improve ID recovery after short occlusion
 * Compare box-based counting and mask-based counting quantitatively
+
 

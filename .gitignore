@@ -61,3 +61,9 @@ work_truck/
 Thumbs.db
 .vscode/
 .idea/
+# README example assets
+!examples/images/
+!examples/images/*.jpg
+!examples/images/*.png
+!examples/videos/
+!examples/videos/*.mp4
